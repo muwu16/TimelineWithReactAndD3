@@ -28,7 +28,7 @@ const App = () => {
 
   const handleMouseMove = useCallback((event) => {
     const { clientX, clientY } = event;
-    if (clientX > margin.left && clientY < (width - margin.right - margin.left))
+    if (clientX > margin.left && clientX < (width - margin.right ))
       setMousePosition({x: clientX, y: clientY }); 
     }, [setMousePosition]);
 
