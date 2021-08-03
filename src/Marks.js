@@ -7,11 +7,13 @@ export const Marks = ({
   colorScale,
   colorValue,
   idValue,
-  onHover
+  onHover,
+  strokeRed
 }) =>
   data.map((d, i) => (
     
       <rect className='mark'
+        stroke={strokeRed ? "red" : "none"}
         key={idValue(d)}
         onMouseEnter={() => {
           onHover({

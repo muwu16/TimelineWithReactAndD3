@@ -112,6 +112,8 @@ const App = () => {
             startValue={startValue}
             colorScale={colorScale}
             colorValue={colorValue}
+            onHover={setMarkInfo}
+            strokeRed={true}
           />
         </g>
         <g opacity={markInfo || hoveredValue ? fadeOpacity : 1}>  
@@ -125,6 +127,7 @@ const App = () => {
             onHover={setMarkInfo}
             colorScale={colorScale}
             colorValue={colorValue}
+            
           />
         </g>
         <MarkText markInfo={markInfo} data={data} showInfo={showInfo}/>

@@ -17,7 +17,7 @@ export const ColorLegend = ({
       }}
       opacity={hoveredValue && domainValue !== hoveredValue ? fadeOpacity : 1}
       >
-      <rect fill={colorScale(domainValue)} width={10 * 2} height={10 * 2} />
+      <rect fill={colorScale(domainValue)} width={tickSize * 2} height={tickSize * 2} />
       <text x={tickTextOffset} dy="1.0em">
         {domainValue}
       </text>
