@@ -8,8 +8,8 @@ import './index.css';
 import { ColorLegend } from './ColorLegend';
 import { MarkText } from './MartText';
 
-const width = 1866;
-const height = 1000;
+const width = 1400;
+const height = 800;
 const margin = { top: 80, right: 280, bottom: 80, left: 80 };
 const xAxisLabelOffset = 40;
 const xLabelText = 'World History Timeline';

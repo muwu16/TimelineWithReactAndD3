@@ -11,9 +11,9 @@ export const MarkText = ({markInfo, data, showInfo}) =>{
 
   if (markInfo){
     return <g>
-        <line x1={markInfo.x + 30} y1={markInfo.y + 10} x2={markInfo.x + 30} y2={markInfo.y + 30} stroke="red"/>
+        <line x1={markInfo.x } y1={markInfo.y + 10} x2={markInfo.x} y2={markInfo.y + 30} stroke="red"/>
           <rect 
-            x={markInfo.x + 30} 
+            x={markInfo.x } 
             y={markInfo.y + 30}
             fill="white"
             height={15 * showInfo.length}
@@ -25,7 +25,7 @@ export const MarkText = ({markInfo, data, showInfo}) =>{
 
           {showInfo.map((item, i) => <text 
             key={item}
-            x={markInfo.x + 40} 
+            x={markInfo.x + 10} 
             y={markInfo.y + 15 * (i + 1)}
             dy={'2.2em'}
             className='mark-info'
