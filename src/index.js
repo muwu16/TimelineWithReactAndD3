@@ -45,6 +45,7 @@ const App = () => {
   const endValue = d => d.end;
   const colorValue = (d) => d.region;
   const idValue = (d) => d.civilization;
+  
   const colorLegendLabel = 'Region';
   const filteredData = data.filter(d => hoveredValue === colorValue(d));
   const filteredDataById = data.filter(d => markInfo ? markInfo.id === idValue(d) : 1);
@@ -99,34 +100,34 @@ const App = () => {
             fadeOpacity={fadeOpacity}
           />
         </g>
-        <g opacity={markInfo || hoveredValue ? fadeOpacity : 1}>  
-          <Marks
-            data={data}
-            startScale={startScale}
-            endScale={endScale}
-            endValue={endValue}
-            startValue={startValue}
-            onHover={setMarkInfo}
-            colorScale={colorScale}
-            colorValue={colorValue}
-          />
-        </g>
+
 
         <g >  
           <Marks
             data={markInfo ? filteredDataById : filteredData}
             startScale={startScale}
             endScale={endScale}
+            idValue={idValue}
             endValue={endValue}
+            startValue={startValue}
+            colorScale={colorScale}
+            colorValue={colorValue}
+          />
+        </g>
+        <g opacity={markInfo || hoveredValue ? fadeOpacity : 1}>  
+          <Marks
+            data={data}
+            startScale={startScale}
+            endScale={endScale}
+            endValue={endValue}
+            idValue={idValue}
             startValue={startValue}
             onHover={setMarkInfo}
             colorScale={colorScale}
             colorValue={colorValue}
           />
         </g>
-
         <MarkText markInfo={markInfo} data={data} showInfo={showInfo}/>
-
       </g>
     </svg>
   );

@@ -6,11 +6,13 @@ export const Marks = ({
   startValue,
   colorScale,
   colorValue,
+  idValue,
   onHover
 }) =>
   data.map((d, i) => (
     
       <rect className='mark'
+        key={idValue(d)}
         onMouseEnter={() => {
           onHover({
             x: startScale(startValue(d)),
@@ -18,14 +20,11 @@ export const Marks = ({
             index: i,
             id: d.civilization
           });
-          // console.log(i);
-        }}
-      onMouseOut={() => {
-          // console.log();
-          onHover(null);
-          
-        }}
-        // key={yValue(d)}
+          }}
+          onMouseOut={() => {
+            onHover(null);
+          }}
+
         
         x={startScale(startValue(d))}
         y={endScale(d.civilization)}
@@ -35,7 +34,7 @@ export const Marks = ({
       >
 
         
-        <title >{(d.civilization)}</title>
+        <title >{i}</title>
         
       
       </rect>

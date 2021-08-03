@@ -8,7 +8,7 @@ export const ColorLegend = ({
   fadeOpacity
 }) =>
   colorScale.domain().map((domainValue, i) => (
-    <g className="legend" transform={`translate(0,${i * tickSpacing})`}
+    <g className="legend"  key={domainValue} transform={`translate(0,${i * tickSpacing})`}
       onMouseEnter={() => {
         onHover(domainValue);
       }}

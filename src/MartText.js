@@ -23,17 +23,14 @@ export const MarkText = ({markInfo, data, showInfo}) =>{
           </rect>
 
           {showInfo.map((item, i) => <text 
+            key={item}
             x={markInfo.x + 40} 
             y={markInfo.y + 30 * (i + 1)}
             dy={'0.9em'}
             className='mark-info'
             >
-            
             {item + ': ' + data[markInfo.index][item]}
-          
           </text>)}
-  
-
       </g>;
   }
 }

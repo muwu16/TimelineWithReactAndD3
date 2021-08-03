@@ -11,11 +11,6 @@ export const useData = () => {
 
       d.end = + d.end;
       d.start = + d.start;
-
-      // d.sepal_length = +d.sepal_length;
-      // d.sepal_width = +d.sepal_width;
-      // d.petal_length = +d.petal_length;
-      // d.petal_width = +d.petal_width;
       return d;
     };
     csv(csvUrl, row).then(d => {
